@@ -1,0 +1,24 @@
+<h1></h1>
+
+<form  enctype="multipart/form-data">
+    <div class="images"> </div>
+    <script>
+        const loadImages = async () => {
+            
+            const response = await fetch('http://localhost:3000/showimageUser/jomphonxxx').then(response => response.json());
+            const imagesElemnet =  document.querySelector('.images');
+            imagesElemnet.innerHTML = '';
+            
+            response.data.forEach(
+                 image => {
+                    var x = document.createElement("IMG");
+                    x.setAttribute("src", "http://localhost:3000/showimages/" + image.images);
+                    x.setAttribute("height", "228");
+                imagesElemnet.appendChild(x);
+            }
+            );
+        };
+
+        window.onload = loadImages;
+    </script>
+</form>
