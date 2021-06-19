@@ -1,21 +1,21 @@
 <h1></h1>
 
-<form  enctype="multipart/form-data">
+<form enctype="multipart/form-data">
     <div class="images"> </div>
     <script>
         const loadImages = async () => {
-            
-            const response = await fetch('http://localhost:3000/showimageUser/jomphonxxx').then(response => response.json());
-            const imagesElemnet =  document.querySelector('.images');
+
+            const response = await fetch('http://34.134.3.142:3000/showimageUser/jsonjson22').then(response => response.json());
+            const imagesElemnet = document.querySelector('.images');
             imagesElemnet.innerHTML = '';
-            
+
             response.data.forEach(
-                 image => {
+                image => {
                     var x = document.createElement("IMG");
-                    x.setAttribute("src", "http://localhost:3000/showimages/" + image.images);
-                    x.setAttribute("height", "228");
-                imagesElemnet.appendChild(x);
-            }
+                    x.setAttribute("src", "http://34.134.3.142:3000/showimages/" + image.images);
+                    x.setAttribute("height", "500");
+                    imagesElemnet.appendChild(x);
+                }
             );
         };
 
